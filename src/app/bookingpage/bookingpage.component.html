@@ -1,0 +1,139 @@
+<!-- header -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" id="logo1" href="home-page"><img id="logo"
+                src="https://i.postimg.cc/7YrpRx7J/logo-no-background.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-5">
+                    <a class="nav-link active" aria-current="page" href="home-page">Home</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- room total payment details -->
+<div class="container mt-5">
+    <div class="card" style="width:100%;">
+        <div class="card-body">
+            <h5 class="card-title">Room payment </h5>
+            <br>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Hotel Name: <strong>{{hname}}</strong></h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Room Type: <strong>{{roomtype}}</strong></h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Number of days: {{difference}}<strong></strong></h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Total amount: {{totalprice}}</h6>
+        </div>
+    </div>
+</div>
+
+<!-- room total payment details -->
+
+
+
+<!-- payment details -->
+<div class="container mt-5 mb-5">
+    <form [formGroup]="bookingForm" (ngSubmit)="booking()"> 
+        <div class="row">
+            <h4>Account</h4>
+            <div class="input-group input-group-icon">
+                <input formControlName="fullname" type="text" id="fn" name="fn" placeholder="Full Name">
+                <div class="input-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+            </div>
+            <div class="input-group input-group-icon">
+                <input formControlName="email" id="em" name="em" type="email" placeholder="Email Address">
+                <div class="input-icon">
+                    <i class="fa fa-envelope"></i>
+                </div>
+            </div>
+            <div class="input-group input-group-icon">
+                <input formControlName="psw" id="pw" name="pw" type="password" placeholder="Password">
+                <div class="input-icon">
+                    <i class="fa fa-key"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-half">
+                <h4>Date of Birth</h4>
+                <div class="input-group">
+                    <div class="col-third">
+                        <input type="text" placeholder="DD">
+                    </div>
+                    <div class="col-third">
+                        <input type="text" placeholder="MM">
+                    </div>
+                    <div class="col-third">
+                        <input type="text" placeholder="YYYY">
+                    </div>
+                </div>
+            </div>
+            <div class="col-half">
+                <h4>Gender</h4>
+                <div class="input-group">
+                    <input id="gender-male" type="radio" name="gender" value="male">
+                    <label for="gender-male">Male</label>
+                    <input id="gender-female" type="radio" name="gender" value="female">
+                    <label for="gender-female">Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4>Payment Details</h4>
+            <div class="input-group">
+                <input id="payment-method-card" type="radio" name="payment-method" value="card" checked="true">
+                <label for="payment-method-card">
+                    <span>
+                        <i class="fa fa-cc-visa"></i>
+                        Credit Card
+                    </span>
+                </label>
+                <input id="payment-method-paypal" type="radio" name="payment-method" value="paypal">
+                <label for="payment-method-paypal">
+                    <span>
+                        <i class="fa fa-cc-paypal"></i>
+                        Paypal
+                    </span>
+                </label>
+            </div>
+            <div class="input-group input-group-icon">
+                <input formControlName="cardn" id="cn" name="cn" type="text" placeholder="Card Number">
+                <div class="input-icon">
+                    <i class="fa fa-credit-card"></i>
+                </div>
+            </div>
+            <div class="col-half">
+                <div class="input-group input-group-icon">
+                    <input type="text" formControlName="cardcvv" id="ccvv" name="ccvv" placeholder="Card CVC">
+                    <div class="input-icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-half">
+                <div class="input-group">
+                    <div class="col-third">
+                        <input type="text" formControlName="cmonth" id="month" name="month" placeholder="MM">
+                    </div>
+                    <div class="col-third">
+                        <input type="text" formControlName="cardyear" id="cyear" name="cyear" placeholder="YYYY">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-warning">SUBMIT</button>
+        </div>
+    </form>
+</div>
+
+<!-- payment details close -->
+

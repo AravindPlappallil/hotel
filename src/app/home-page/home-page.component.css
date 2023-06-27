@@ -1,0 +1,20 @@
+#logo{
+    height: 100%;
+    width: 100%;
+}
+#logo1{
+    height: 10%;
+    width: 15%;
+}
+#section1{
+    height: 400px;
+    width:100.87%;
+    background-image: url(https://i.postimg.cc/Y23sLTYN/orlando-night-panorama.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+
+}
+#freeSpace1{
+    height: 70px;
+}

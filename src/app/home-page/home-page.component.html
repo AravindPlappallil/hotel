@@ -1,0 +1,225 @@
+<!-- header -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" id="logo1" href="home-page"><img id="logo"
+        src="https://i.postimg.cc/7YrpRx7J/logo-no-background.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ms-5">
+          <a class="nav-link active" aria-current="page" href="home-page">Home</a>
+        </li>
+        <li class="nav-item ms-5">
+          <a class="nav-link active" aria-current="page" href="orders">Orders</a>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <button class="btn btn-outline-dark" type="submit">{{uname}}</button>
+        <button (click)="logout()" class="btn btn-outline-danger ms-2" type="submit">LogOut</button>
+      </form>
+      <span class="navbar-text text-dark">
+        
+      </span>
+    </div>
+  </div>
+</nav>
+
+<!-- section 1 -->
+
+
+<div>
+  <div class="row" id="section1">
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<div id="freeSpace1">
+
+</div>
+
+<!-- room booking box -->
+
+<div class=" mx-auto w-100 ">
+  <div class="row w-75 mx-auto text-center">
+    <div class="col-lg-12">
+      <form [formGroup]="bookingData">
+        <div class="input-group mb-3">
+          <input formControlName="splace" id="search" name="place" type="text" class="form-control p-3" placeholder="City Name" aria-label="City Name">
+          <input formControlName="fdate"  [min]="todaydate" type="date" class="form-control p-3"  id="fromdate" name="checkin" placeholder="Check-in-date" aria-label="Date">
+          <input formControlName="tdate" [min]="todaydate" type="date" class="form-control p-3" id="todate" name="checkout" placeholder="Check-out-date" aria-label="date">
+          <button (click)="booking()" class="btn btn-success p-3" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- poster -->
+<div>
+
+</div>
+
+<!-- popular place in kerala  -->
+<div>
+  <div>
+    <!-- <h2>Popular Destination in Kerala</h2> -->
+    <div class="row mx-auto " style="width: 90%;">
+
+      <!-- card-1 -->
+      <div *ngFor="let i of hoteldetail" class="col-lg-6 ">
+        <div  class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-6">
+              <img src={{i.hotelimage}} class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">{{i.hotelname}}</h5>
+                <p class="card-text">{{i.location}}</p>
+                <h5 class="card-text">Rs. <small class="text-body-secondary">{{i.price}}/day</small></h5>
+                <button (click)="book(i.hotelid)" type="submit" class="btn btn-info">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- poster start -->
+<div class="row container mx-auto">
+  <div class="col-md-12 text-center">
+    <img src="https://i.postimg.cc/tCxHfr5y/hotel-booking.png" alt="">
+  </div>
+</div>
+<!-- poster stop -->
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>BookMeNow
+          </h6>
+          <p>
+            Experience hospitality at its finest with our exquisite hotel rooms.
+            Unwind and recharge in the comfort of our well appointed hotel rooms.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Hotels
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Kochi</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Kottayam</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Idukki</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Wayanad</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Kochi, Kerala India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            bookmenow@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/"></a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->

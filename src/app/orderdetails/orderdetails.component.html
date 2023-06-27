@@ -1,0 +1,41 @@
+<!-- header -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" id="logo1" href="home-page"><img id="logo"
+                src="https://i.postimg.cc/7YrpRx7J/logo-no-background.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-5">
+                    <a class="nav-link active" aria-current="page" href="home-page">Home</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- order details  -->
+
+<div class="container text-center mt-5">
+    <div>
+        <div *ngFor="let i of orderDetails " class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col mx-auto m-4">
+              <div class="card">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h5 class="card-title">{{i.hotelName}}</h5>
+                  <p class="card-text">Check-in-date : <strong>{{i.checkInDate}}</strong></p>
+                  <p class="card-text">Check-out-date : <strong>{{i.checkOutDate}}</strong></p>
+                  <p class="card-text">Total Amount : <strong>{{i.totalAmount}}</strong></p>
+                </div>
+              </div>
+            </div>
+            
+    </div>
+</div>
+<!-- order details over -->
